@@ -2,6 +2,7 @@ parse_config:
   zmk_preamble: "#include <zmk-helpers/key-labels/42.h>"
   zmk_additional_includes:
     - "modules/helpers/include"
+    - "zmk-helpers/include"
 
 draw_config:
   footer_text: "urob/zmk-config"
