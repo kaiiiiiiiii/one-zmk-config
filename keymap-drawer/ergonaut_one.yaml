@@ -1,6 +1,6 @@
 layers:
   default:
-  - ']'
+  - {t: +, h: '='}
   - Q
   - W
   - E
@@ -11,8 +11,8 @@ layers:
   - I
   - O
   - P
-  - '['
-  - '`'
+  - {t: _, h: '-'}
+  - {t: '{', h: '['}
   - {t: A, h: LGUI}
   - {t: S, h: LALT}
   - {t: D, h: LCTRL}
@@ -23,8 +23,8 @@ layers:
   - {t: K, h: LCTRL}
   - {t: L, h: LALT}
   - {t: ;, h: LGUI}
-  - ''''
-  - '-'
+  - {t: '}', h: ']'}
+  - {t: '|', h: '~'}
   - Z
   - X
   - C
@@ -32,10 +32,10 @@ layers:
   - B
   - N
   - M
-  - {t: ',', s: ;}
-  - {t: ., s: ':'}
-  - {t: '?', s: '!'}
-  - \
+  - {t: <, h: ','}
+  - {t: '>', h: .}
+  - {t: '?', s: /}
+  - {t: '"', s: ''''}
   - {t: ESC, h: num}
   - BSPC
   - RET

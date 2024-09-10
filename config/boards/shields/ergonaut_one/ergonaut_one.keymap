@@ -127,40 +127,13 @@ ZMK_TRI_STATE(swapper,
         bindings = <BINDING1>, <BINDING2>; \
     )
 
-// tap: ? | shift + tap: / | ctrl + shift + tap: \
+// tap: ? | shift + tap: / | ctrl + shift + tap: /\
 SIMPLE_MORPH(qmark_morph, SFT, &kp QMARK, &qmark_inner_morph)
 SIMPLE_MORPH(qmark_inner_morph, CTL, &kp FSLH, &kp BSLH)
 
 // tap: " | shift + tap: ' | ctrl + shift + tap: `
 SIMPLE_MORPH(quote_morph, SFT, &kp DQT, &quote_inner_morph)
 SIMPLE_MORPH(quote_inner_morph, CTL, &kp SQT, &kp GRAVE)
-
-// tap: space | shift + tap: dot -> space -> sticky shift | hold: activate layer
-ZMK_HOLD_TAP(lt_spc,
-    flavor = "balanced";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <QUICK_TAP_MS>;
-    bindings = <&mo>, <&spc_morph>;
-)
-SIMPLE_MORPH(spc_morph, SFT, &kp SPACE, &dot_spc)
-ZMK_MACRO(dot_spc,
-    wait-ms = <0>;
-    tap-ms = <5>;
-    bindings = <&kp DOT &kp SPACE &sk LSHFT>;
-)
-
-// tap: backspace | lshft + tap: delete | rshft + tap: shift-delete
-ZMK_MOD_MORPH(bs_del,
-    bindings = <&kp BSPC>, <&kp DEL>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-    keep-mods = <MOD_RSFT>;
-)
-
-// tap: copy | double-tap: cut
-ZMK_TAP_DANCE(copy_cut,
-    tapping-term-ms = <200>;
-    bindings = <&kp LC(INS)>, <&kp LC(X)>;
-)
 
 // misc aliases
 #define CANCEL      &kp K_CANCEL             // cancel caps-word, num-word and smart-mouse
