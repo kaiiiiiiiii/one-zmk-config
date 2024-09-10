@@ -127,7 +127,7 @@ ZMK_TRI_STATE(swapper,
         bindings = <BINDING1>, <BINDING2>; \
     )
 
-// tap: ? | shift + tap: / | ctrl + shift + tap: /\
+// tap: ? | shift + tap: / | ctrl + shift + tap: BACKSLASH
 SIMPLE_MORPH(qmark_morph, SFT, &kp QMARK, &qmark_inner_morph)
 SIMPLE_MORPH(qmark_inner_morph, CTL, &kp FSLH, &kp BSLH)
 
