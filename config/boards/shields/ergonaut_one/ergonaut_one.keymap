@@ -58,8 +58,6 @@ MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)  // left-hand HRMs
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
 MAKE_HRM(hml_repeat, &kp, &key_repeat, KEYS_R THUMBS)  // used for HRM-combo
-MAKE_HRM(hmr_lpar_lt, &kp, &lpar_lt, KEYS_L THUMBS)    // "    "   "   "
-MAKE_HRM(hmr_rpar_gt, &kp, &rpar_gt, KEYS_L THUMBS)    // "    "   "   "
 
 /* Nav cluster */
 
@@ -129,20 +127,13 @@ ZMK_TRI_STATE(swapper,
         bindings = <BINDING1>, <BINDING2>; \
     )
 
-// tap: comma | shift + tap: semicolon | ctrl + shift + tap: <
-SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
-SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
+// tap: ? | shift + tap: / | ctrl + shift + tap: \
+SIMPLE_MORPH(qmark_morph, SFT, &kp QMARK, &qmark_inner_morph)
+SIMPLE_MORPH(qmark_inner_morph, CTL, &kp FSLH, &kp BSLH)
 
-// tap: dot | shift + tap: colon | ctrl + shift + tap: >
-SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &dot_inner_morph)
-SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
-
-// tap: qmark | shift + tap: excl
-SIMPLE_MORPH(qexcl, SFT, &kp QMARK, &kp EXCL)
-
-// tap: left/right parenthesis | shft + tap: less-than/greater-than
-SIMPLE_MORPH(lpar_lt, SFT, &kp LPAR, &kp LT)
-SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
+// tap: " | shift + tap: ' | ctrl + shift + tap: `
+SIMPLE_MORPH(quote_morph, SFT, &kp DQT, &quote_inner_morph)
+SIMPLE_MORPH(quote_inner_morph, CTL, &kp SQT, &kp GRAVE)
 
 // tap: space | shift + tap: dot -> space -> sticky shift | hold: activate layer
 ZMK_HOLD_TAP(lt_spc,
@@ -173,6 +164,9 @@ ZMK_TAP_DANCE(copy_cut,
 
 // misc aliases
 #define CANCEL      &kp K_CANCEL             // cancel caps-word, num-word and smart-mouse
+#define DOT_MORPH   &mt DOT GREATER_THAN
+#define COMMA_MORPH &mt COMMA LESS_THAN
+#define TILDE_MORPH &mt TILDE PIPE
 
 /* Keymap */
 
@@ -183,11 +177,11 @@ ZMK_CONDITIONAL_LAYER(sys, NAV NUM, SYS)  // NAV + NUM --> SYS
 /* Keymap Default Layer */
 ZMK_LAYER(default,
 //  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮       ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-        &kp RBKT       &kp Q         &kp W          &kp E         &kp R         &kp T                &kp Y         &kp U         &kp I         &kp O         &kp P        &kp LBKT       
+    &mt EQUAL PLUS     &kp Q         &kp W         &kp E         &kp R         &kp T                &kp Y         &kp U         &kp I         &kp O         &kp P     &mt MINUS UNDER    
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
-        &kp GRAVE   &hml LGUI A   &hml LALT S   &hml LCTRL D  &hml LSHFT F      &kp G                &kp H     &hmr RSHFT J  &hmr LCTRL K   &hmr LALT L  &hmr LGUI SEMI   &kp SQT
+     &mt LBKT LBRC  &hml LGUI A   &hml LALT S   &hml LCTRL D  &hml LSHFT F      &kp G                &kp H     &hmr RSHFT J  &hmr LCTRL K   &hmr LALT L &hmr LGUI SEMI &mt RBKT RBRC
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
-        &kp MINUS      &kp Z         &kp X          &kp C         &kp V         &kp B                &kp N         &kp M     &comma_morph    &dot_morph     &qexcl        &kp BSLH
+      TILDE_MORPH      &kp Z         &kp X          &kp C         &kp V         &kp B                &kp N         &kp M      COMMA_MORPH    DOT_MORPH    &qmark_morph  &quote_morph
 //  ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────├       ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
                                                 &lt NUM ESC     &kp BSPC      &kp RET              &kp ENTER     &kp SPACE    &lt NAV TAB
 //                                            ╰─────────────┴─────────────┴─────────────╯       ╰─────────────┴─────────────┴─────────────╯
