@@ -72,19 +72,6 @@ MAKE_HRM(hml_repeat, &kp, &key_repeat, KEYS_R THUMBS)  // used for HRM-combo
 ZMK_HOLD_TAP(mt_home, bindings = <&masked_home>, <&kp>; MT_CORE)
 ZMK_HOLD_TAP(mt_end, bindings = <&masked_end>, <&kp>; MT_CORE)
 
-#define NAV_LEFT    &mt_home 0   LEFT    // tap: left  | long-tap: beginning of line
-#define NAV_RIGHT   &mt_end 0    RIGHT   // tap: right | long-tap: end       of line
-#define NAV_UP      &mt LC(HOME) UP      // tap: up    | long-tap: beginning of document
-#define NAV_DOWN    &mt LC(END)  DOWN    // tap: down  | long-tap: end       of document
-
-#define BSPC_MORPH  &mt LC(BSPC) BSPC    // tap: bspc  | long-tap: delete word backward
-#define DEL_MORPH   &mt LC(DEL)  DEL     // tap: del   | long-tap: delete word forward
-
-#define CANCEL      &kp K_CANCEL             // cancel caps-word, num-word and smart-mouse
-#define DOT_MORPH   &mt DOT GREATER_THAN
-#define COMMA_MORPH &mt COMMA LESS_THAN
-#define TILDE_MORPH &mt TILDE PIPE
-
 // mask CTRL when holding left/right to avoid accidental jumps to beginning/end of document
 #define MASK_MODS(NAME, MODS, BINDING) \
     ZMK_MOD_MORPH(NAME, \
@@ -116,6 +103,19 @@ SIMPLE_MORPH(qmark_inner_morph, CTL, &kp FSLH, &kp BSLH)
 // tap: " | shift + tap: ' | ctrl + shift + tap: `
 SIMPLE_MORPH(quote_morph, SFT, &kp DQT, &quote_inner_morph)
 SIMPLE_MORPH(quote_inner_morph, CTL, &kp SQT, &kp GRAVE)
+
+#define NAV_LEFT    &mt_home 0   LEFT    // tap: left  | long-tap: beginning of line
+#define NAV_RIGHT   &mt_end 0    RIGHT   // tap: right | long-tap: end       of line
+#define NAV_UP      &mt LC(HOME) UP      // tap: up    | long-tap: beginning of document
+#define NAV_DOWN    &mt LC(END)  DOWN    // tap: down  | long-tap: end       of document
+
+#define BSPC_MORPH  &mt LC(BSPC) BSPC    // tap: bspc  | long-tap: delete word backward
+#define DEL_MORPH   &mt LC(DEL)  DEL     // tap: del   | long-tap: delete word forward
+
+#define CANCEL      &kp K_CANCEL             // cancel caps-word, num-word and smart-mouse
+#define DOT_MORPH   &mt DOT GREATER_THAN
+#define COMMA_MORPH &mt COMMA LESS_THAN
+#define TILDE_MORPH &mt TILDE PIPE
 
 /* Keymap */
 
