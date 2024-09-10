@@ -72,12 +72,18 @@ MAKE_HRM(hml_repeat, &kp, &key_repeat, KEYS_R THUMBS)  // used for HRM-combo
 ZMK_HOLD_TAP(mt_home, bindings = <&masked_home>, <&kp>; MT_CORE)
 ZMK_HOLD_TAP(mt_end, bindings = <&masked_end>, <&kp>; MT_CORE)
 
-#define NAV_LEFT  &mt_home 0   LEFT    // tap: left  | long-tap: beginning of line
-#define NAV_RIGHT &mt_end 0    RIGHT   // tap: right | long-tap: end       of line
-#define NAV_UP    &mt LC(HOME) UP      // tap: up    | long-tap: beginning of document
-#define NAV_DOWN  &mt LC(END)  DOWN    // tap: down  | long-tap: end       of document
-#define NAV_BSPC  &mt LC(BSPC) BSPC    // tap: bspc  | long-tap: delete word backward
-#define NAV_DEL   &mt LC(DEL)  DEL     // tap: del   | long-tap: delete word forward
+#define NAV_LEFT    &mt_home 0   LEFT    // tap: left  | long-tap: beginning of line
+#define NAV_RIGHT   &mt_end 0    RIGHT   // tap: right | long-tap: end       of line
+#define NAV_UP      &mt LC(HOME) UP      // tap: up    | long-tap: beginning of document
+#define NAV_DOWN    &mt LC(END)  DOWN    // tap: down  | long-tap: end       of document
+
+#define BSPC_MORPH  &mt LC(BSPC) BSPC    // tap: bspc  | long-tap: delete word backward
+#define DEL_MORPH     &mt LC(DEL)  DEL     // tap: del   | long-tap: delete word forward
+
+#define CANCEL      &kp K_CANCEL             // cancel caps-word, num-word and smart-mouse
+#define DOT_MORPH   &mt DOT GREATER_THAN
+#define COMMA_MORPH &mt COMMA LESS_THAN
+#define TILDE_MORPH &mt TILDE PIPE
 
 // mask CTRL when holding left/right to avoid accidental jumps to beginning/end of document
 #define MASK_MODS(NAME, MODS, BINDING) \
@@ -135,12 +141,6 @@ SIMPLE_MORPH(qmark_inner_morph, CTL, &kp FSLH, &kp BSLH)
 SIMPLE_MORPH(quote_morph, SFT, &kp DQT, &quote_inner_morph)
 SIMPLE_MORPH(quote_inner_morph, CTL, &kp SQT, &kp GRAVE)
 
-// misc aliases
-#define CANCEL      &kp K_CANCEL             // cancel caps-word, num-word and smart-mouse
-#define DOT_MORPH   &mt DOT GREATER_THAN
-#define COMMA_MORPH &mt COMMA LESS_THAN
-#define TILDE_MORPH &mt TILDE PIPE
-
 /* Keymap */
 
 ZMK_CONDITIONAL_LAYER(sys, NAV NUM, SYS)  // NAV + NUM --> SYS
@@ -156,18 +156,18 @@ ZMK_LAYER(default,
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
       TILDE_MORPH      &kp Z         &kp X          &kp C         &kp V         &kp B                &kp N         &kp M      COMMA_MORPH    DOT_MORPH    &qmark_morph  &quote_morph
 //  ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────├       ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                                &lt NUM ESC     &kp BSPC      &kp RET              &kp ENTER     &kp SPACE    &lt NAV TAB
+                                                &lt NUM ESC   BSPC_MORPH     DEL_MORPH             &kp ENTER     &kp SPACE    &lt NAV TAB
 //                                            ╰─────────────┴─────────────┴─────────────╯       ╰─────────────┴─────────────┴─────────────╯
 )
 
 /* Keymap Nav Layer */
 ZMK_LAYER(nav,
 //  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮       ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-          XXX           XXX           XXX       &kp LS(TAB)     &swapper   &kp C_VOL_UP             &kp PG_UP     NAV_BSPC      NAV_UP        NAV_DEL         XXX         &kp SLCK
+          XXX         &kp TAB      &kp ENTER     &kp SPACE      &swapper    &kp C_VOL_UP           &kp PG_UP  &kp PRINT_SCREEN  NAV_UP        NAV_DEL         XXX         &kp SLCK
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
           XXX         &sk LGUI      &sk LALT      &sk LCTRL     &sk LSHFT    &kp C_MUTE             &kp PG_DN     NAV_LEFT      NAV_DOWN      NAV_RIGHT     &kp RET       &kp CLCK 
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
-          XXX           XXX           XXX           XXX           XXX      &kp C_VOL_DN             &kp INS       &kp TAB       &kp LT        &kp GT          XXX         &kp K_APP
+          XXX           XXX           XXX           XXX           XXX      &kp C_VOL_DN             &kp INS         XXX          &kp LT        &kp GT          XXX        &kp K_APP
 //  ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────├       ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
                                                     ___           ___           ___                   ___           ___          ___
 //                                            ╰─────────────┴─────────────┴─────────────╯       ╰─────────────┴─────────────┴─────────────╯
