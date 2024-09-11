@@ -63,7 +63,7 @@ layers:
   - MUTE
   - PG DN
   - {t: LEFT, h: HOME}
-  - {t: DOWN, h: Ctl+ END}
+  - ''
   - {t: RIGHT, h: END}
   - INS
   - CLCK
@@ -75,7 +75,7 @@ layers:
   - VOL DN
   - ''
   - ''
-  - <
+  - {t: DOWN, h: Ctl+ END}
   - ''
   - RET
   - APP
