@@ -44,14 +44,17 @@ layers:
   - {t: TAB, h: num}
   nav:
   - ''
-  - TAB
-  - ENTER
-  - SPACE
+  - ESC
+  - {t: BSPC, h: Ctl+ BSPC}
+  - {t: DEL, h: Ctl+ DEL}
   - '&swapper'
   - VOL UP
   - PG UP
   - PSCRN
   - {t: UP, h: Ctl+ HOME}
+  - ''
+  - ''
+  - SLCK
   - ''
   - {t: LGUI, h: sticky}
   - {t: LALT, h: sticky}
@@ -73,13 +76,13 @@ layers:
   - INS
   - ''
   - <
-  - '>'
+  - ''
   - ''
   - APP
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   num:
