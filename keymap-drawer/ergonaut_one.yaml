@@ -51,6 +51,7 @@ layers:
   - VOL UP
   - PG UP
   - PSCRN
+  - {t: UP, h: Ctl+ HOME}
   - ''
   - {t: LGUI, h: sticky}
   - {t: LALT, h: sticky}
@@ -78,8 +79,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   num:
   - {t: +, h: LCTRL}

@@ -139,7 +139,7 @@ ZMK_LAYER(default,
 /* Keymap Nav Layer */
 ZMK_LAYER(nav,
 //  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮       ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-          XXX         &kp TAB      &kp ENTER     &kp SPACE      &swapper    &kp C_VOL_UP           &kp PG_UP     &kp PSCRN      //NAV_UP        NAV_DEL         XXX         &kp SLCK
+          XXX         &kp TAB      &kp ENTER     &kp SPACE      &swapper    &kp C_VOL_UP           &kp PG_UP     &kp PSCRN      NAV_UP        //NAV_DEL         XXX         &kp SLCK
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
           XXX         &sk LGUI      &sk LALT      &sk LCTRL     &sk LSHFT    &kp C_MUTE             &kp PG_DN     NAV_LEFT      NAV_DOWN      NAV_RIGHT     &kp RET       &kp CLCK 
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
