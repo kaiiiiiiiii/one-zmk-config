@@ -139,11 +139,11 @@ ZMK_LAYER(default,
 /* Keymap Nav Layer */
 ZMK_LAYER(nav,
 //  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮       ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-          XXX         &kp ESC      BSPC_MORPH     DEL_MORPH     &swapper    &kp C_VOL_UP           &kp PG_UP     &kp PSCRN      NAV_UP          XXX           XXX         &kp SLCK
+          XXX         &kp ESC      BSPC_MORPH     DEL_MORPH     &swapper    &kp C_VOL_UP           &kp PG_UP        XXX         NAV_UP          XXX        &kp PSCRN     &kp SLCK
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
-          XXX         &sk LGUI      &sk LALT      &sk LCTRL     &sk LSHFT    &kp C_MUTE             &kp PG_DN     NAV_LEFT      NAV_DOWN      NAV_RIGHT     &kp RET       &kp CLCK 
+          XXX         &sk LGUI      &sk LALT      &sk LCTRL     &sk LSHFT    &kp C_MUTE             &kp PG_DN     NAV_LEFT      NAV_DOWN      NAV_RIGHT     &kp INS      &kp CLCK 
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
-          XXX           XXX           XXX           XXX           XXX      &kp C_VOL_DN             &kp INS         XXX          &kp LT         XXX           XXX         &kp K_APP
+          XXX           XXX           XXX           XXX           XXX      &kp C_VOL_DN               XXX           XXX          &kp LT         XXX         &kp RET      &kp K_APP
 //  ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────├       ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
                                                     ___           ___           ___                   ___           ___          ___
 //                                            ╰─────────────┴─────────────┴─────────────╯       ╰─────────────┴─────────────┴─────────────╯
@@ -152,9 +152,9 @@ ZMK_LAYER(nav,
 /* Keymap Num Layer */
 ZMK_LAYER(num,
 //  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮       ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    &mt LCTRL PLUS   &kp EXCL       &kp AT       &kp HASH      &kp DLLR       &kp PRCNT            &kp CARET      &kp AMPS      &kp STAR     &kp LPAR      &kp RPAR  &mt RCTRL MINUS
+    &mt LCTRL EQUAL   &kp EXCL      &kp AT       &kp HASH      &kp DLLR      &kp PRCNT             &kp CARET      &kp AMPS      &kp STAR     &kp LPAR      &kp RPAR   &mt RCTRL MINUS
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
-    &mt LALT EQUAL     &kp N1       &kp N2         &kp N3        &kp N4        &kp N5                &kp N6        &kp N7       &kp N8        &kp N9        &kp N0       &kp RALT
+    &mt LALT PLUS     &kp N1       &kp N2         &kp N3        &kp N4        &kp N5                &kp N6        &kp N7       &kp N8        &kp N9        &kp N0     &mt RALT UNDER
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
       &mt LGUI F1      &kp F2         &kp F3       &kp F4        &kp F5        &kp F6                &kp F7        &kp F8       &kp F9        &kp F10       &kp F11       &kp F12           
 //  ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────├       ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
