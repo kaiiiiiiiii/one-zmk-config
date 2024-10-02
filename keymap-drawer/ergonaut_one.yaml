@@ -6,15 +6,13 @@ layers:
   - E
   - R
   - T
-  - Y
-  - U
-  - I
-  - O
+  - Y alt u morph
+  - I alt o morph
   - P
   - {t: _, h: '-'}
   - {t: '{', h: '['}
-  - {t: A, h: LGUI}
-  - {t: S, h: LALT}
+  - {t: alt a morph, h: LGUI}
+  - {t: alt s morph, h: LALT}
   - {t: D, h: LCTRL}
   - {t: F, h: LSHFT}
   - G
@@ -77,9 +75,9 @@ layers:
   - ''
   - ''
   - ''
-  - RET
+  - {t: RET, type: held}
   - APP
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -125,9 +123,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   sys:
   - '&bootloader'
   - ''
@@ -163,11 +161,11 @@ layers:
   - ''
   - ''
   - ''
-  - ''
+  - {type: held}
   - '&sys_reset'
+  - {t: ▽, type: trans}
+  - ''
+  - ''
   - {type: held}
   - ''
-  - ''
-  - ''
-  - ''
-  - {type: held}
+  - {t: ▽, type: trans}

@@ -104,6 +104,20 @@ SIMPLE_MORPH(qmark_inner_morph, CTL, &kp FSLH, &kp BSLH)
 SIMPLE_MORPH(quote_morph, SFT, &kp DQT, &quote_inner_morph)
 SIMPLE_MORPH(quote_inner_morph, CTL, &kp SQT, &kp GRAVE)
 
+#define ALT_MORPH(NAME, BINDING1, BINDING2) \
+    ZMK_MOD_MORPH(NAME, \
+        mods = <MOD_LALT>; \
+        bindings = <BINDING1>, <BINDING2>; \
+    )
+
+ALT_MORPH(alt_a_morph, &kp A, &de_ae)
+ALT_MORPH(alt_o_morph, &kp O, &de_oe)
+ALT_MORPH(alt_u_morph, &kp U, &de_ue)
+ALT_MORPH(alt_s_morph, &kp S, &de_ss)
+
+#define KEY_A       &hml LGUI alt_a_morph
+#define KEY_S       &hml LALT alt_s_morph
+
 #define NAV_LEFT    &mt_home 0   LEFT    // tap: left  | long-tap: beginning of line
 #define NAV_RIGHT   &mt_end 0    RIGHT   // tap: right | long-tap: end       of line
 #define NAV_UP      &mt LC(HOME) UP      // tap: up    | long-tap: beginning of document
@@ -121,14 +135,12 @@ SIMPLE_MORPH(quote_inner_morph, CTL, &kp SQT, &kp GRAVE)
 
 ZMK_CONDITIONAL_LAYER(sys, NAV NUM, SYS)  // NAV + NUM --> SYS
 
-//Still missing: &de_ae        &de_oe        &de_ue
-
 /* Keymap Default Layer */
 ZMK_LAYER(default,
 //  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮       ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    &mt EQUAL PLUS     &kp Q         &kp W         &kp E         &kp R         &kp T                &kp Y         &kp U         &kp I         &kp O         &kp P     &mt MINUS UNDER    
+    &mt EQUAL PLUS     &kp Q         &kp W         &kp E         &kp R         &kp T                &kp Y       alt_u_morph    &kp I       alt_o_morph     &kp P     &mt MINUS UNDER    
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
-     &mt LBKT LBRC  &hml LGUI A   &hml LALT S   &hml LCTRL D  &hml LSHFT F      &kp G                &kp H     &hmr RSHFT J  &hmr LCTRL K   &hmr LALT L &hmr LGUI SEMI &mt RBKT RBRC
+     &mt LBKT LBRC     KEY_A         KEY_S     &hml LCTRL D  &hml LSHFT F      &kp G                &kp H     &hmr RSHFT J  &hmr LCTRL K   &hmr LALT L &hmr LGUI SEMI &mt RBKT RBRC
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
       TILDE_MORPH      &kp Z         &kp X          &kp C         &kp V         &kp B                &kp N         &kp M      COMMA_MORPH    DOT_MORPH    &qmark_morph  &quote_morph
 //  ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────├       ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
