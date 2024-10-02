@@ -13,8 +13,8 @@ layers:
   - P
   - {t: _, h: '-'}
   - {t: '{', h: '['}
-  - {t: alt a morph, h: LGUI}
-  - {t: alt s morph, h: LALT}
+  - {t: a ae, h: LGUI}
+  - {t: s ss, h: LALT}
   - {t: D, h: LCTRL}
   - {t: F, h: LSHFT}
   - G

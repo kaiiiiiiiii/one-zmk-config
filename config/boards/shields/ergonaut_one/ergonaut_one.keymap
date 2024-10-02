@@ -110,13 +110,13 @@ SIMPLE_MORPH(quote_inner_morph, CTL, &kp SQT, &kp GRAVE)
         bindings = <BINDING1>, <BINDING2>; \
     )
 
-ALT_MORPH(alt_a_morph, &kp A, &de_ae)
-ALT_MORPH(alt_o_morph, &kp O, &de_oe)
-ALT_MORPH(alt_u_morph, &kp U, &de_ue)
-ALT_MORPH(alt_s_morph, &kp S, &de_ss)
+ALT_MORPH(a_ae, &kp A, &de_ae)
+ALT_MORPH(o_oe, &kp O, &de_oe)
+ALT_MORPH(u_ue, &kp U, &de_ue)
+ALT_MORPH(s_ss, &kp S, &de_ss)
 
-#define KEY_A       &hml LGUI alt_a_morph
-#define KEY_S       &hml LALT alt_s_morph
+#define KEY_A       &hml LGUI a_ae
+#define KEY_S       &hml LALT s_ss
 
 #define NAV_LEFT    &mt_home 0   LEFT    // tap: left  | long-tap: beginning of line
 #define NAV_RIGHT   &mt_end 0    RIGHT   // tap: right | long-tap: end       of line
@@ -138,7 +138,7 @@ ZMK_CONDITIONAL_LAYER(sys, NAV NUM, SYS)  // NAV + NUM --> SYS
 /* Keymap Default Layer */
 ZMK_LAYER(default,
 //  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮       ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    &mt EQUAL PLUS     &kp Q         &kp W         &kp E         &kp R         &kp T                &kp Y       &alt_u_morph    &kp I      &alt_o_morph     &kp P     &mt MINUS UNDER    
+    &mt EQUAL PLUS     &kp Q         &kp W         &kp E         &kp R         &kp T                &kp Y          &u_ue        &kp I          &o_oe        &kp P     &mt MINUS UNDER    
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
      &mt LBKT LBRC     KEY_A         KEY_S     &hml LCTRL D  &hml LSHFT F      &kp G                &kp H     &hmr RSHFT J  &hmr LCTRL K   &hmr LALT L &hmr LGUI SEMI &mt RBKT RBRC
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
