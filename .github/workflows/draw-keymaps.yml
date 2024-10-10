@@ -117,12 +117,10 @@ jobs:
 
       - name: Get last commit message
         id: last_commit_message
-        if: amend_commit == true && (destination == 'commit' || destination == 'both')
         run: |
           echo "msg=$(git log -1 --pretty=%s)" >> $GITHUB_OUTPUT
 
       - name: Commit updated images
-        if: ( destination == 'commit' || destination == 'both' )
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           file_pattern: '$output_folder/*.svg $output_folder/*.yaml'
@@ -138,7 +136,6 @@ jobs:
 
       - name: Artifact upload
         id: artifact-upload-step
-        if: (destination == 'artifact' || destination == 'both' )
         uses: actions/upload-artifact@v4
         with:
           name: '$artifact_name'
