@@ -7,14 +7,14 @@ layers:
   - R
   - T
   - Y
-  - ''
+  - {t: U, s: '&de_ue_lower'}
   - I
-  - ''
+  - {t: O, s: '&de_oe_lower'}
   - P
   - {t: _, h: '-'}
   - {t: '{', h: '['}
-  - ''
-  - ''
+  - {t: a ae, h: LGUI}
+  - {t: s ss, h: LALT}
   - {t: D, h: LCTRL}
   - {t: F, h: LSHFT}
   - G
