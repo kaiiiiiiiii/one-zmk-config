@@ -34,7 +34,7 @@ jobs:
           submodules: recursive
 
       - name: Install keymap-drawer (pypi)
-        run: python3 -m pip install keymap-drawer
+        run: python3 -m pip install keymap-drawer --break-system-packages
 
       - name: Install west
         run: python3 -m pip install west
