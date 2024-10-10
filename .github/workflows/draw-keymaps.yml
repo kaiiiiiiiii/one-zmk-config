@@ -34,12 +34,7 @@ jobs:
           submodules: recursive
 
       - name: Install keymap-drawer (pypi)
-        if: install_branch == ''
         run: python3 -m pip install keymap-drawer
-
-      - name: Install keymap-drawer (git)
-        if: install_branch != ''
-        run: python3 -m pip install "git+$install_repo@$install_branch"
 
       - name: Install west
         run: python3 -m pip install west
