@@ -117,7 +117,7 @@ jobs:
 
       - name: Get last commit message
         id: last_commit_message
-        if: $amend_commit == true && (destination == 'commit' || destination == 'both')
+        if: amend_commit == true && (destination == 'commit' || destination == 'both')
         run: |
           echo "msg=$(git log -1 --pretty=%s)" >> $GITHUB_OUTPUT
 
