@@ -129,7 +129,7 @@ ZMK_CONDITIONAL_LAYER(sys, NAV NUM, SYS)  // NAV + NUM --> SYS
 /* Keymap Default Layer */
 ZMK_LAYER(default,
 //  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮       ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    &mt EQUAL PLUS     &kp Q         &kp W         &kp E         &kp R         &kp T                 &kp Y         &u_ue        &kp I          &o_oe        &kp P     &mt MINUS UNDER    
+    &mt EQUAL PLUS     &kp Q         &kp W         &kp E         &kp R         &kp T                 &kp Y         &kp U        &kp I          &kp O        &kp P     &mt MINUS UNDER    
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
      &mt LBKT LBRC  &hml LGUI A   &hml LALT S  &hml LCTRL D  &hml LSHFT F      &kp G                 &kp H     &hmr RSHFT J  &hmr LCTRL K   &hmr LALT L &hmr LGUI SEMI &mt RBKT RBRC
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
