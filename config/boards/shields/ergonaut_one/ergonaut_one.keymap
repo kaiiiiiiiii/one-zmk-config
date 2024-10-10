@@ -110,10 +110,14 @@ SIMPLE_MORPH(quote_inner_morph, CTL, &kp SQT, &kp GRAVE)
         bindings = <BINDING1>, <BINDING2>; \
     )
 
+// tap: a | alt + tap: ä | alt + shift + tap: Ä
 ALT_MORPH(a_ae, &kp A, &de_ae)
+// tap: o | alt + tap: ö | alt + shift + tap: Ö
 ALT_MORPH(o_oe, &kp O, &de_oe)
+// tap: u | alt + tap: ü | alt + shift + tap: Ü
 ALT_MORPH(u_ue, &kp U, &de_ue)
-ALT_MORPH(s_ss, &kp S, &de_ss)
+// tap: s | alt + tap: ß | alt + shift + tap: ẞ
+ALT_MORPH(s_ss, &kp S, &de_eszett)
 
 #define KEY_A       &hml LGUI a_ae
 #define KEY_S       &hml LALT s_ss
