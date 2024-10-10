@@ -13,7 +13,7 @@ layers:
   - P
   - {t: _, h: '-'}
   - {t: '{', h: '['}
-  - ''
+  - {t: a ae, h: LGUI}
   - ''
   - {t: D, h: LCTRL}
   - {t: F, h: LSHFT}
