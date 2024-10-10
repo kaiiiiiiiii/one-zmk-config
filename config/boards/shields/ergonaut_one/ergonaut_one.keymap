@@ -104,10 +104,12 @@ SIMPLE_MORPH(quote_morph, SFT, &kp DQT, &quote_inner_morph)
 SIMPLE_MORPH(quote_inner_morph, CTL, &kp SQT, &kp GRAVE)
 
 /* German umlauts */
+/*
 ZMK_LEADER_SEQUENCE(de_ae,      &de_ae,         LM4 RM3)  // ä
 ZMK_LEADER_SEQUENCE(de_oe,      &de_oe,         RT3 LM3)  // ö
 ZMK_LEADER_SEQUENCE(de_ue,      &de_ue,         RT1 LM3)  // ü
 ZMK_LEADER_SEQUENCE(de_eszett,  &de_eszett,     RM4 LM3)  // ß
+*/
 
 #define NAV_LEFT    &mt_home 0   LEFT    // tap: left  | long-tap: beginning of line
 #define NAV_RIGHT   &mt_end 0    RIGHT   // tap: right | long-tap: end       of line
