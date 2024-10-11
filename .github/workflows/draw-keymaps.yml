@@ -10,7 +10,7 @@ on:
 
 jobs:
   draw:
-    uses: kaiiiiiiiii/one-zmk-config/.github/workflows/draw.yml@main
+    uses: ./.github/workflows/draw.yml
     with:
       keymap_patterns: "config/*.keymap"
       config_path: keymap-drawer/config.yaml
