@@ -120,7 +120,7 @@ ZMK_LEADER_SEQUENCE(de_eszett,  &de_eszett,     RM4 LM3)  // ß
 
 #define DOT_MORPH   &mt GREATER_THAN DOT
 #define COMMA_MORPH &mt LESS_THAN COMMA
-#define TILDE_MORPH &mt TILDE PIPE
+#define TILDE_MORPH &mt PIPE TILDE
 
 /* Keymap */
 
@@ -129,9 +129,9 @@ ZMK_CONDITIONAL_LAYER(sys, NAV NUM, SYS)  // NAV + NUM --> SYS
 /* Keymap Default Layer */
 ZMK_LAYER(default,
 //  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮       ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    &mt EQUAL PLUS     &kp Q         &kp W         &kp E         &kp R         &kp T                 &kp Y         &kp U        &kp I          &kp O        &kp P     &mt MINUS UNDER    
+    &mt PLUS EQUAL     &kp Q         &kp W         &kp E         &kp R         &kp T                 &kp Y         &kp U        &kp I          &kp O        &kp P     &mt UNDER MINUS    
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
-     &mt LBKT LBRC  &hml LGUI A   &hml LALT S  &hml LCTRL D  &hml LSHFT F      &kp G                 &kp H     &hmr RSHFT J  &hmr LCTRL K   &hmr LALT L &hmr LGUI SEMI &mt RBKT RBRC
+     &mt LBRC LBKT  &hml LGUI A   &hml LALT S  &hml LCTRL D  &hml LSHFT F      &kp G                 &kp H     &hmr RSHFT J  &hmr LCTRL K   &hmr LALT L &hmr LGUI SEMI &mt RBRC RBKT
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
       TILDE_MORPH      &kp Z         &kp X          &kp C         &kp V         &kp B                &kp N         &kp M      COMMA_MORPH    DOT_MORPH    &qmark_morph  &quote_morph
 //  ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────├       ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
