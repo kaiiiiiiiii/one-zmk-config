@@ -118,8 +118,8 @@ ZMK_LEADER_SEQUENCE(de_eszett,  &de_eszett,     RM4 LM3)  // ß
 #define BSPC_MORPH  &mt LC(BSPC) BSPC    // tap: bspc  | long-tap: delete word backward
 #define DEL_MORPH   &mt LC(DEL)  DEL     // tap: del   | long-tap: delete word forward
 
-#define DOT_MORPH   &mt DOT GREATER_THAN
-#define COMMA_MORPH &mt COMMA LESS_THAN
+#define DOT_MORPH   &mt GREATER_THAN DOT
+#define COMMA_MORPH &mt LESS_THAN COMMA
 #define TILDE_MORPH &mt TILDE PIPE
 
 /* Keymap */
