@@ -90,7 +90,7 @@ layers:
   - '!'
   - '@'
   - '#'
-  - $
+  - '&mt euro_sign EURO DLLR'
   - '%'
   - ^
   - '&'

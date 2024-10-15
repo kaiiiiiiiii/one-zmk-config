@@ -13,8 +13,6 @@
 #define NUM 2
 #define SYS 3
 
-//#include "combos.dtsi"
-
 #define XXX &none
 #define ___ &trans
 
