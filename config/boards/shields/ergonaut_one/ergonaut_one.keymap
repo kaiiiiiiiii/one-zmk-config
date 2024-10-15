@@ -122,7 +122,7 @@ ZMK_LEADER_SEQUENCE(de_eszett,  &de_eszett,     RM4 LM3)  // ß
 #define BSPC_MORPH  &mt LC(BSPC) BSPC    // tap: bspc  | long-tap: delete word backward
 #define DEL_MORPH   &mt LC(DEL)  DEL     // tap: del   | long-tap: delete word forward
 
-#define DLLR_MORPH  &mt curr_euro DLLR    // tap: $  | long-tap: €
+#define DLLR_MORPH  &mt EURO DOLLAR    // tap: $  | long-tap: €
 
 /* Keymap */
 ZMK_CONDITIONAL_LAYER(sys, NAV NUM, SYS)  // NAV + NUM --> SYS
