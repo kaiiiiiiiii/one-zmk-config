@@ -121,6 +121,8 @@ ZMK_LEADER_SEQUENCE(de_eszett,  &de_eszett,     RM4 LM3)  // ß
 #define BSPC_MORPH  &mt LC(BSPC) BSPC    // tap: bspc  | long-tap: delete word backward
 #define DEL_MORPH   &mt LC(DEL)  DEL     // tap: del   | long-tap: delete word forward
 
+ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)  // €
+
 #define DLLR_MORPH  &mt curr_euro EURO DLLR    // tap: $  | long-tap: €
 
 /* Keymap */
