@@ -90,7 +90,7 @@ layers:
   - '!'
   - '@'
   - '#'
-  - {t: $, h: EURO}
+  - '&mt curr_euro EURO DLLR'
   - '%'
   - ^
   - '&'
