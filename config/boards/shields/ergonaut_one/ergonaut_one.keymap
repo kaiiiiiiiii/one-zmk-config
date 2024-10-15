@@ -5,7 +5,6 @@
 
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/42.h"
-#include "zmk-helpers/unicode-chars/currency.dtsi"
 #include "zmk-helpers/unicode-chars/german.dtsi"
 
 #define DEF 0
@@ -123,7 +122,7 @@ ZMK_LEADER_SEQUENCE(de_eszett,  &de_eszett,     RM4 LM3)  // ß
 
 ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)  // €
 
-#define DLLR_MORPH  &mt curr_euro EURO DLLR    // tap: $  | long-tap: €
+#define DLLR_MORPH  &mt euro_sign EURO DLLR    // tap: $  | long-tap: €
 
 /* Keymap */
 ZMK_CONDITIONAL_LAYER(sys, NAV NUM, SYS)  // NAV + NUM --> SYS
