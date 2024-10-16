@@ -106,12 +106,6 @@ SIMPLE_MORPH(pipe_morph, SFT, &kp PIPE, &kp TILDE)          // tap: | | shift + 
 SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp LESS_THAN)    // tap: , | shift + tap: <
 SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp GREATER_THAN)     // tap: . | shift + tap: >
 
-/* German umlauts */
-ZMK_LEADER_SEQUENCE(de_ae,      &de_ae,         LM4 RM3)  // ä
-ZMK_LEADER_SEQUENCE(de_oe,      &de_oe,         RT3 LM3)  // ö
-ZMK_LEADER_SEQUENCE(de_ue,      &de_ue,         RT1 LM3)  // ü
-ZMK_LEADER_SEQUENCE(de_eszett,  &de_eszett,     RM4 LM3)  // ß
-
 #define NAV_LEFT    &mt_home 0   LEFT    // tap: left  | long-tap: beginning of line
 #define NAV_RIGHT   &mt_end 0    RIGHT   // tap: right | long-tap: end       of line
 #define NAV_UP      &mt LC(HOME) UP      // tap: up    | long-tap: beginning of document
@@ -154,7 +148,7 @@ ZMK_LAYER(nav,
 /* Keymap Num Layer */
 ZMK_LAYER(num,
 //  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮       ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    &mt LCTRL EQUAL   &kp EXCL      &kp AT       &kp HASH &mt euro_sign DLLR &kp PRCNT             &kp CARET      &kp AMPS      &kp STAR     &kp LPAR      &kp RPAR   &mt RCTRL MINUS
+    &mt LCTRL EQUAL   &kp EXCL      &kp AT       &kp HASH      &kp DLLR      &kp PRCNT             &kp CARET      &kp AMPS      &kp STAR     &kp LPAR      &kp RPAR   &mt RCTRL MINUS
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
     &mt LALT PLUS     &kp N1       &kp N2         &kp N3        &kp N4        &kp N5                &kp N6        &kp N7       &kp N8        &kp N9        &kp N0     &mt RALT UNDER
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
