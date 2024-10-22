@@ -86,7 +86,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   num:
-  - {t: '=', h: LCTRL}
+  - {t: '=', s: +}
   - '!'
   - '@'
   - '#'
@@ -97,19 +97,19 @@ layers:
   - '*'
   - (
   - )
-  - {t: '-', h: RCTRL}
-  - {t: +, h: LALT}
-  - '1'
-  - '2'
-  - '3'
-  - '4'
+  - {t: '-', s: _}
+  - ''
+  - {t: '1', h: LGUI}
+  - {t: '2', h: LALT}
+  - {t: '3', h: LCTRL}
+  - {t: '4', h: LSHFT}
   - '5'
   - '6'
-  - '7'
-  - '8'
-  - '9'
-  - '0'
-  - {t: _, h: RALT}
+  - {t: '7', h: RSHFT}
+  - {t: '8', h: LCTRL}
+  - {t: '9', h: LALT}
+  - {t: '0', h: LGUI}
+  - ''
   - {t: F1, h: LGUI}
   - F2
   - F3
