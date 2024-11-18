@@ -77,12 +77,6 @@ MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
 
 /* Custom behaviors */
 
-// Alt+Tab swapper, requires PR #1366
-ZMK_TRI_STATE(swapper,
-    bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
-    ignored-key-positions = <LT2>;
-)
-
 // reuse basic mod-morph scheme
 #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2) \
     ZMK_MOD_MORPH(NAME, \
@@ -106,6 +100,9 @@ SIMPLE_MORPH(pipe_morph, SFT, &kp PIPE, &kp TILDE)          // tap: | | shift + 
 SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp LESS_THAN)    // tap: , | shift + tap: <
 SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp GREATER_THAN)     // tap: . | shift + tap: >
 
+// Press strg alt and win at the same time with one keypress
+SIMPLE_MORPH(w_a_s_morph, SFT, &kp W, &kp A, &kp S)          // tap: win + alt + strg
+
 #define NAV_LEFT    &mt_home 0   LEFT    // tap: left  | long-tap: beginning of line
 #define NAV_RIGHT   &mt_end 0    RIGHT   // tap: right | long-tap: end       of line
 #define NAV_UP      &mt LC(HOME) UP      // tap: up    | long-tap: beginning of document
@@ -113,8 +110,6 @@ SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp GREATER_THAN)     // tap: . | shift + 
 
 #define BSPC_MORPH  &mt LC(BSPC) BSPC    // tap: bspc  | long-tap: delete word backward
 #define DEL_MORPH   &mt LC(DEL)  DEL     // tap: del   | long-tap: delete word forward
-
-ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)  // €
 
 /* Keymap */
 ZMK_CONDITIONAL_LAYER(sys, NAV NUM, SYS)  // NAV + NUM --> SYS
@@ -135,7 +130,7 @@ ZMK_LAYER(default,
 /* Keymap Nav Layer */
 ZMK_LAYER(nav,
 //  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮       ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-          XXX         &kp ESC      BSPC_MORPH     DEL_MORPH     &swapper    &kp C_VOL_UP           &kp PG_UP        XXX         NAV_UP          XXX        &kp PSCRN     &kp SLCK
+          XXX         &kp ESC      BSPC_MORPH     DEL_MORPH   w_a_s_morph&kp C_VOL_UP           &kp PG_UP        XXX         NAV_UP          XXX        &kp PSCRN     &kp SLCK
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
           XXX         &sk LGUI      &sk LALT      &sk LCTRL     &sk LSHFT    &kp C_MUTE             &kp PG_DN     NAV_LEFT      NAV_DOWN      NAV_RIGHT     &kp INS      &kp CLCK 
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤

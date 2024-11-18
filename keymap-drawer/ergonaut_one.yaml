@@ -46,8 +46,7 @@ layers:
   - ''
   - ESC
   - {t: BSPC, h: Ctl+ BSPC}
-  - {t: DEL, h: Ctl+ DEL}
-  - '&swapper'
+  - '&mt LC(DEL) DEL w_a_s_morph'
   - VOL UP
   - PG UP
   - ''
@@ -79,8 +78,8 @@ layers:
   - ''
   - RET
   - APP
-  - {type: held}
   - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
