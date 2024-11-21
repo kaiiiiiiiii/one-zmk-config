@@ -102,7 +102,8 @@ SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp GREATER_THAN)     // tap: . | shift + 
 
 // Custom behavior for pressing three keys at once
 #define TRIPLE_MACRO(NAME, BINDING1, BINDING2, BINDING3) \
-    ZMK_BEHAVIOR(NAME, macro, \
+    ZMK_MACRO(NAME, \
+        wait-ms = <100>;
         bindings = <BINDING1, BINDING2, BINDING3>; \
     )
 
