@@ -101,13 +101,13 @@ SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp LESS_THAN)    // tap: , | shift + 
 SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp GREATER_THAN)     // tap: . | shift + tap: >
 
 // Custom behavior for pressing three keys at once
-#define TRIPLE_MORPH(NAME, BINDING1, BINDING2, BINDING3) \
-    ZMK_BEHAVIOR(NAME, \
-        bindings = <BINDING1>, <BINDING2>, <BINDING3>; \
+#define TRIPLE_MACRO(NAME, BINDING1, BINDING2, BINDING3) \
+    ZMK_BEHAVIOR(NAME, macro, \
+        bindings = <BINDING1, BINDING2, BINDING3>; \
     )
 
 // Press Win, Alt, and Ctrl at the same time with one keypress
-TRIPLE_MORPH(w_a_s_morph, &kp LGUI, &kp LALT, &kp LCTRL)
+TRIPLE_MACRO(was_macro, &kp LGUI, &kp LALT, &kp LCTRL)
 
 #define NAV_LEFT    &mt_home 0   LEFT    // tap: left  | long-tap: beginning of line
 #define NAV_RIGHT   &mt_end 0    RIGHT   // tap: right | long-tap: end       of line
@@ -136,7 +136,7 @@ ZMK_LAYER(default,
 /* Keymap Nav Layer */
 ZMK_LAYER(nav,
 //  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮       ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-          XXX         &kp ESC      BSPC_MORPH     DEL_MORPH   w_a_s_morph   &kp C_VOL_UP           &kp PG_UP        XXX         NAV_UP          XXX        &kp PSCRN     &kp SLCK
+          XXX         &kp ESC      BSPC_MORPH     DEL_MORPH   &was_macro    &kp C_VOL_UP           &kp PG_UP        XXX         NAV_UP          XXX        &kp PSCRN     &kp SLCK
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
           XXX         &sk LGUI      &sk LALT      &sk LCTRL     &sk LSHFT    &kp C_MUTE             &kp PG_DN     NAV_LEFT      NAV_DOWN      NAV_RIGHT     &kp INS      &kp CLCK 
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
