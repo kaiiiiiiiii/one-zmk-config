@@ -100,7 +100,6 @@ SIMPLE_MORPH(pipe_morph, SFT, &kp PIPE, &kp TILDE)          // tap: | | shift + 
 SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp LESS_THAN)    // tap: , | shift + tap: <
 SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp GREATER_THAN)     // tap: . | shift + tap: >
 
-
 // Press Win, Alt, and Ctrl at the same time with one keypress
 ZMK_MACRO(was_macro,
     wait-ms = <100>;
@@ -115,15 +114,17 @@ ZMK_MACRO(dot_spc,
     bindings = <&kp DOT &kp SPACE &sk LSHFT>;
 )
 
-#define NAV_LEFT    &mt_home 0   LEFT    // tap: left  | long-tap: beginning of line
-#define NAV_RIGHT   &mt_end 0    RIGHT   // tap: right | long-tap: end       of line
-#define NAV_UP      &mt LC(HOME) UP      // tap: up    | long-tap: beginning of document
-#define NAV_DOWN    &mt LC(END)  DOWN    // tap: down  | long-tap: end       of document
+ZMK_HOLD_TAP(mt_dot, bindings = <&dot_spc>, <&kp>; MT_CORE)
 
-#define BSPC_MORPH  &mt LC(BSPC) BSPC    // tap: bspc  | long-tap: delete word backward
-#define DEL_MORPH   &mt LC(DEL)  DEL     // tap: del   | long-tap: delete word forward
+#define NAV_LEFT    &mt_home 0   LEFT       // tap: left  | long-tap: beginning of line
+#define NAV_RIGHT   &mt_end 0    RIGHT      // tap: right | long-tap: end       of line
+#define NAV_UP      &mt LC(HOME) UP         // tap: up    | long-tap: beginning of document
+#define NAV_DOWN    &mt LC(END)  DOWN       // tap: down  | long-tap: end       of document
 
-#define DOT_SPC_MORPH &dot_spc   &dot_morph // tap: . | long-tap: dot space sticky shift
+#define BSPC_MORPH  &mt LC(BSPC) BSPC       // tap: bspc  | long-tap: delete word backward
+#define DEL_MORPH   &mt LC(DEL)  DEL        // tap: del   | long-tap: delete word forward
+
+#define DOT_MORPH   &mt_dot 0    &dot_morph // tap: . | long-tap: dot space sticky shift
 
 /* Keymap */
 ZMK_CONDITIONAL_LAYER(sys, NAV NUM, SYS)  // NAV + NUM --> SYS
@@ -135,7 +136,7 @@ ZMK_LAYER(default,
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
       &lbkt_morph  &hml LGUI A   &hml LALT S  &hml LCTRL D  &hml LSHFT F      &kp G                  &kp H     &hmr RSHFT J  &hmr LCTRL K   &hmr LALT L &hmr LGUI SEMI  &rbkt_morph
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
-      &pipe_morph      &kp Z         &kp X          &kp C         &kp V         &kp B                &kp N         &kp M      &comma_morph DOT_SPC_MORPH &qmark_morph  &quote_morph
+      &pipe_morph      &kp Z         &kp X          &kp C         &kp V         &kp B                &kp N         &kp M      &comma_morph   DOT_MORPH   &qmark_morph  &quote_morph
 //  ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────├       ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
                                                 &lt NAV ESC   BSPC_MORPH     DEL_MORPH             &kp ENTER     &kp SPACE    &lt NUM TAB
 //                                            ╰─────────────┴─────────────┴─────────────╯       ╰─────────────┴─────────────┴─────────────╯
