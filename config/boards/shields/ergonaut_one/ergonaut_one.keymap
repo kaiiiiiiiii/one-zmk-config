@@ -98,7 +98,7 @@ SIMPLE_MORPH(lbkt_morph, SFT, &kp LBKT, &kp LBRC)           // tap: [ | shift + 
 SIMPLE_MORPH(rbkt_morph, SFT, &kp RBKT, &kp RBRC)           // tap: ] | shift + tap: }
 SIMPLE_MORPH(pipe_morph, SFT, &kp PIPE, &kp TILDE)          // tap: | | shift + tap: ~
 SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp LESS_THAN)    // tap: , | shift + tap: <
-SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp GREATER_THAN)     // tap: . | shift + tap: >
+//SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp GREATER_THAN)     // tap: . | shift + tap: >
 
 // Press Win, Alt, and Ctrl at the same time with one keypress
 ZMK_MACRO(was_macro,
@@ -124,7 +124,7 @@ ZMK_HOLD_TAP(mt_dot, bindings = <&dot_spc>, <&kp>; MT_CORE)
 #define BSPC_MORPH  &mt LC(BSPC) BSPC       // tap: bspc  | long-tap: delete word backward
 #define DEL_MORPH   &mt LC(DEL)  DEL        // tap: del   | long-tap: delete word forward
 
-#define DOT_MORPH   &mt_dot 0    &dot_morph // tap: . | long-tap: dot space sticky shift
+#define DOT_MORPH   &mt_dot 0    DOT       // tap: . | long-tap: dot space sticky shift
 
 /* Keymap */
 ZMK_CONDITIONAL_LAYER(sys, NAV NUM, SYS)  // NAV + NUM --> SYS
