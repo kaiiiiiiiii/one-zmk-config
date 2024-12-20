@@ -116,6 +116,18 @@ ZMK_MACRO(dot_spc,
 
 ZMK_HOLD_TAP(mt_dot, bindings = <&dot_spc>, <&kp>; MT_CORE)
 
+// tap: TAB, double-tap: ALT + TABk
+ZMK_HOLD_TAP(tab_action,
+    bindings = <&kp TAB>, <&kp LALT &kp TAB>;
+    flavor = "balanced"; 
+    tapping-term-ms = <280>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    hold-trigger-key-positions = <0>;
+    hold-trigger-on-release;
+)
+
+#define TAB_KEY &tab_action
+
 #define NAV_LEFT    &mt_home 0   LEFT       // tap: left  | long-tap: beginning of line
 #define NAV_RIGHT   &mt_end 0    RIGHT      // tap: right | long-tap: end       of line
 #define NAV_UP      &mt LC(HOME) UP         // tap: up    | long-tap: beginning of document
@@ -138,7 +150,7 @@ ZMK_LAYER(default,
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
       &pipe_morph      &kp Z         &kp X          &kp C         &kp V         &kp B                &kp N         &kp M      &comma_morph   DOT_MORPH   &qmark_morph  &quote_morph
 //  ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────├       ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                                &lt NAV ESC   BSPC_MORPH     DEL_MORPH             &kp ENTER     &kp SPACE    &lt NUM TAB
+                                                &lt NAV ESC   BSPC_MORPH     DEL_MORPH             &kp ENTER     &kp SPACE  &lt NUM TAB_KEY
 //                                            ╰─────────────┴─────────────┴─────────────╯       ╰─────────────┴─────────────┴─────────────╯
 )
 
