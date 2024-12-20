@@ -117,6 +117,10 @@ ZMK_MACRO(dot_spc,
 ZMK_HOLD_TAP(mt_dot, bindings = <&dot_spc>, <&kp>; MT_CORE)
 
 // tap: TAB, double-tap: ALT + TAB, hold: NUM layer
+ZMK_BEHAVIOR(alt_tab_macro, macro,
+    bindings = <&kp LALT &kp TAB>;
+)
+
 ZMK_HOLD_TAP(tab_action,
     flavor = "balanced";
     tapping-term-ms = <200>;
