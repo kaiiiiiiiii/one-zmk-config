@@ -125,9 +125,7 @@ ZMK_HOLD_TAP(tab_action,
     flavor = "balanced";
     tapping-term-ms = <200>;
     quick-tap-ms = <175>;
-    on-tap = <&kp TAB>;
-    on-quick-tap = <&alt_tab_macro>;
-    on-hold = <&mo NUM>;
+    bindings = <&kp TAB>, <&alt_tab_macro>, <&mo NUM>;
 )
 
 #define NAV_LEFT    &mt_home 0   LEFT       // tap: left  | long-tap: beginning of line
