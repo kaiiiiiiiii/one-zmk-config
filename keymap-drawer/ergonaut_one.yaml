@@ -37,21 +37,21 @@ layers:
   - {t: '?', s: /}
   - {t: '"', s: ''''}
   - {t: ESC, h: nav}
-  - {t: BSPC, h: Ctl+ BSPC}
-  - {t: DEL, h: Ctl+ DEL}
+  - {t: BSPC, h: Ctl+BSPC}
+  - {t: DEL, h: Ctl+DEL}
   - ENTER
   - SPACE
-  - '&tab_action'
+  - '&tab_tri'
   nav:
   - ''
   - ESC
-  - {t: BSPC, h: Ctl+ BSPC}
-  - {t: DEL, h: Ctl+ DEL}
+  - {t: BSPC, h: Ctl+BSPC}
+  - {t: DEL, h: Ctl+DEL}
   - '&was_macro'
   - VOL UP
   - PG UP
   - ''
-  - {t: UP, h: Ctl+ HOME}
+  - {t: UP, h: Ctl+HOME}
   - ''
   - PSCRN
   - SLCK
@@ -63,7 +63,7 @@ layers:
   - MUTE
   - PG DN
   - {t: LEFT, h: HOME}
-  - {t: DOWN, h: Ctl+ END}
+  - {t: DOWN, h: Ctl+END}
   - {t: RIGHT, h: END}
   - INS
   - CLCK

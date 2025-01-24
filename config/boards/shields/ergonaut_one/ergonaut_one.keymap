@@ -116,16 +116,12 @@ ZMK_MACRO(dot_spc,
 
 ZMK_HOLD_TAP(mt_dot, bindings = <&dot_spc>, <&kp>; MT_CORE)
 
-// tap: TAB, double-tap: ALT + TAB, hold: NUM layer
-ZMK_MACRO(alt_tab_macro, macro,
-    bindings = <&kp LALT &kp TAB>;
-)
-
-ZMK_HOLD_TAP(tab_action,
-    flavor = "balanced";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <175>;
-    bindings = <&kp TAB>, <&alt_tab_macro>, <&mo NUM>;
+ZMK_TRI_STATE(tab_tri,
+    bindings = <&kt LALT>, <&kp TAB>, <&mo NUM>;  // Tri-State: Tap/Hold/Long-Hold
+    tapping-term-ms = <200>;       // Zeit bis zum Hold-Trigger
+    hold-time-ms = <500>;          // Zeit bis zum Long-Hold (Layer)
+    ignored-key-positions = <THUMBS>;  // Ignoriere eigene Position (z.B. Thumb-Keys)
+    quick-release;                 // Verhindert "hängenbleibende" Modifier
 )
 
 #define NAV_LEFT    &mt_home 0   LEFT       // tap: left  | long-tap: beginning of line
@@ -150,7 +146,7 @@ ZMK_LAYER(default,
 //  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
       &pipe_morph      &kp Z         &kp X          &kp C         &kp V         &kp B                &kp N         &kp M      &comma_morph   DOT_MORPH   &qmark_morph  &quote_morph
 //  ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────├       ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                                &lt NAV ESC   BSPC_MORPH     DEL_MORPH             &kp ENTER     &kp SPACE    &tab_action
+                                                &lt NAV ESC   BSPC_MORPH     DEL_MORPH             &kp ENTER     &kp SPACE    &tab_tri
 //                                            ╰─────────────┴─────────────┴─────────────╯       ╰─────────────┴─────────────┴─────────────╯
 )
 
